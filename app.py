@@ -1,4 +1,4 @@
-# Documentation:
+# Updated Documentation:
 # 1. This script builds a Streamlit application for summarizing content from a YouTube video or a website.
 # 2. Dependencies include Streamlit, LangChain, and related libraries for natural language processing and integration with HuggingFace.
 # 3. The user inputs their HuggingFace API token and a URL (either a YouTube video or a webpage). The token is required for accessing the HuggingFace model.
