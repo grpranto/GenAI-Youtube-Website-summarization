@@ -17,4 +17,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://mdgolamrasul:$HF_TOKEN@huggingface.co/spaces/mdgolamrasul/youtube_video_and_website_summarization main
+        run: git push --force https://mdgolamrasul:$HF_TOKEN@huggingface.co/spaces/mdgolamrasul/youtube_video_and_website_summarization main
