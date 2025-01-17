@@ -105,10 +105,11 @@ if st.button("Summarize"):
                 )
 
                 # Generate the Summary
-                output_summary = chain.run(docs)
+                output_summary = chain.invoke(docs)
+                summary_text = output_summary.get('output_text', '').strip()
 
                 # Display the Summary
-                st.success(output_summary)
+                st.success(summary_text)
 
         except Exception as e:
             st.exception(f"Exception:{e}")
