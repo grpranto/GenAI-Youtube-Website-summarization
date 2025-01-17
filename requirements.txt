@@ -14,3 +14,4 @@ unstructured
 pytube 
 huggingface_hub
 nltk
+langchain-groq

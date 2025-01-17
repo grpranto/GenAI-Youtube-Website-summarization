@@ -18,6 +18,7 @@ from langchain.chains.summarize import load_summarize_chain
 from langchain_community.document_loaders import YoutubeLoader, UnstructuredURLLoader
 import nltk
 from langchain_huggingface import HuggingFaceEndpoint
+from langchain_groq import ChatGroq
 
 # Download NLTK data required for text processing
 nltk.download('averaged_perceptron_tagger_eng')
@@ -83,13 +84,17 @@ if st.button("Summarize"):
 
                 docs = loader.load()
 
-                # Configure HuggingFace LLM Endpoint
-                repo_id = "mistralai/Mistral-7B-Instruct-v0.3"
-                llm = HuggingFaceEndpoint(
-                    repo_id=repo_id,
-                    max_new_tokens=150,
-                    temperature=0.7,
-                    huggingfacehub_api_token=hf_api_key
+                # # Configure HuggingFace LLM Endpoint
+                # repo_id = "mistralai/Mistral-7B-Instruct-v0.3"
+                # llm = HuggingFaceEndpoint(
+                #     repo_id=repo_id,
+                #     max_new_tokens=150,
+                #     temperature=0.7,
+                #     huggingfacehub_api_token=hf_api_key
+                # )
+                llm = ChatGroq(
+                    model="gemma2-9b-it",
+                    groq_api_key=hf_api_key
                 )
 
                 # Summarization Chain
