@@ -4,12 +4,12 @@
 # 3. The user inputs their HuggingFace API token and a URL (either a YouTube video or a webpage). The token is required for accessing the HuggingFace model.
 # 4. The application validates the input. If the URL is for a YouTube video, the corresponding loader extracts text from the video's subtitles. For general websites, an unstructured loader fetches and processes the page content.
 # 5. A customizable prompt template guides the summarization process, ensuring concise and informative summaries tailored to the input text.
-# 6. The HuggingFaceEndpoint connects to the meta-llama/Meta-Llama-3-8B-Instruct, which generates the summary. Users can configure this to use a different HuggingFace model if needed.
+# 6. The HuggingFaceEndpoint connects to the mistralai/Mistral-7B-Instruct-v0.3, which generates the summary. Users can configure this to use a different HuggingFace model if needed.
 # 7. The application includes exception handling to manage errors, such as invalid URLs or API token issues, gracefully.
 
 # Notes:
 # - Ensure the HuggingFace API token is valid and has access to the specified model repository.
-# - The meta-llama/Meta-Llama-3-8B-Instruct model is chosen for its summarization capabilities. Other models can be substituted as needed.
+# - The mistralai/Mistral-7B-Instruct-v0.3 model is chosen for its summarization capabilities. Other models can be substituted as needed.
 
 import validators
 import streamlit as st
@@ -84,7 +84,7 @@ if st.button("Summarize"):
                 docs = loader.load()
 
                 # Configure HuggingFace LLM Endpoint
-                repo_id = "meta-llama/Meta-Llama-3-8B-Instruct"
+                repo_id = "mistralai/Mistral-7B-Instruct-v0.3"
                 llm = HuggingFaceEndpoint(
                     repo_id=repo_id,
                     max_new_tokens=150,
