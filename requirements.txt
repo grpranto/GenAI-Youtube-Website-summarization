@@ -6,9 +6,7 @@ pymupdf
 langchain-text-splitters
 langchain-openai
 langchain_huggingface
-faiss-cpu
 langchain_chroma
-langchain-groq
 mysql-connector-python
 validators==0.28.1
 youtube_transcript_api
